@@ -1,0 +1,137 @@
+/* Добавим темный фон для всего тела калькулятора (ночная тема) */
+body {
+    background-color: #222;
+    display: flex;
+    flex-direction: column; /* Меняем направление оси на вертикальное */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Сменим шрифт по умолчанию для всей страницы */
+  }
+  /* Стиль для кнопки переключения темы */
+.theme-btn {
+  position: absolute; /* Чтобы можно было свободно разместить */
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #333; /* Тёмный фон кнопки в светлой теме */
+  color: #fff; /* Белая иконка в светлой теме */
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 100; /* Чтобы была поверх других элементов */
+}
+
+/* СВЕТЛАЯ ТЕМА (тело страницы) */
+body.light-theme {
+  background-color: #f5f5f5; /* Светлый фон страницы */
+  color: #333; /* Тёмный цвет основного текста */
+  transition: all 0.3s ease; /* Плавный переход */
+}
+
+/* Светлая тема для калькулятора */
+body.light-theme .calculator {
+  background-color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Светлая тема для дисплея */
+body.light-theme .display {
+  background-color: #eee;
+  color: #222;
+}
+
+/* Светлая тема для кнопок */
+body.light-theme .btn {
+  background-color: #e0e0e0;
+  color: #222;
+}
+
+/* Светлая тема для кнопки переключения */
+body.light-theme .theme-btn {
+  background-color: #fff; /* Светлый фон кнопки в тёмной теме */
+  color: #333; /* Тёмная иконка в тёмной теме */
+  border: 1px solid #ddd;
+}
+  /* Базовый стиль кнопки калькулятора ИЗМЕНЕН: квадратные кнопки и новый шрифт */
+  .my-btn {
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    background: #515151;
+    color: white;
+    font-size: 1.5rem;
+    /* Поменяем шрифт цифр и сделаем его более толстым */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Новый шрифт */
+    font-weight: 600; /* Более толстый шрифт (значения: 400-normal, 600-semi-bold, 700-bold) */
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Изменим цвет при наведении на ЛЮБУЮ кнопку */
+  .my-btn:hover {
+    /* background: darkgray; Старый цвет */
+    background: #7c7c7c; /* Новый серый цвет при наведении */
+  }
+  
+  /* Специфичные цвета при наведении для кнопок разных типов */
+  .my-btn.primary:hover {
+    background: #ffaa33; /* Новый, более яркий оранжевый */
+  }
+  
+  .my-btn.secondary:hover {
+    background: #c4c4c4; /* Новый, более светлый серый */
+    color: black;
+  }
+  
+  .my-btn:active {
+    filter: brightness(130%);
+  }
+  
+  .my-btn.primary {
+    background: #ff9801;
+  }
+  
+  .my-btn.secondary {
+    background: #a6a6a6;
+    color: black;
+  }
+  
+  .my-btn.execute {
+    width: 110px;
+    border-radius: 8px;
+  }
+  
+  /* Стиль поля вывода результата */
+  .result {
+    width: 220px;
+    height: 50px;
+    margin-bottom: 15px;
+    padding-right: 10px;
+    background: #3a3a7a;
+    border-radius: 12px;
+    text-align: right;
+    color: #ffffff;
+    font-size: 1.5rem;
+    /* Применяем новый толстый шрифт и здесь */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600; /* Толстый шрифт для дисплея */
+    padding-left: 10px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+  }
+  
+  /* Стиль для подписи "ЛР выполнена" */
+  .lab-work-signature {
+    margin-top: 30px; /* Отступ сверху, чтобы отодвинуть от калькулятора */
+    color: #aaa; /* Светло-серый цвет текста */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+  }
